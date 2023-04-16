@@ -10,7 +10,7 @@ var move = key_right - key_left
 hspd = move*spd;
 vspd = vspd + grv;
 
-if(hspd != 0) image_xscale = sign(hspd)*2;
+if(hspd != 0) image_xscale = sign(hspd);
 
 //COLISÃO HORIZONTAL
 if place_meeting(x+ hspd,y,Obj_floor){
@@ -62,7 +62,6 @@ if hspd = 0{
 	if place_meeting
 	(x,y+1,Obj_floor){
 		sprite_index=spr_idle
-		transition = 1
 	}
 }
 if hspd != 0{
