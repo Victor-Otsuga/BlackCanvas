@@ -1,0 +1,1 @@
+instance_destroy(); // Destrói o objeto ataque

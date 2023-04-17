@@ -1,11 +1,15 @@
 {
   "resources": [
     {"id":{"name":"Obj_floor","path":"objects/Obj_floor/Obj_floor.yy",},"order":1,},
+    {"id":{"name":"Obj_playerAtaque","path":"objects/Obj_playerAtaque/Obj_playerAtaque.yy",},"order":5,},
     {"id":{"name":"bg","path":"sprites/bg/bg.yy",},"order":3,},
     {"id":{"name":"spr_idle","path":"sprites/spr_idle/spr_idle.yy",},"order":0,},
     {"id":{"name":"Spr_floor","path":"sprites/Spr_floor/Spr_floor.yy",},"order":1,},
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},"order":3,},
+    {"id":{"name":"Spr_testeTrocaCor","path":"sprites/Spr_testeTrocaCor/Spr_testeTrocaCor.yy",},"order":4,},
     {"id":{"name":"Obj_prota","path":"objects/Obj_prota/Obj_prota.yy",},"order":0,},
+    {"id":{"name":"Spr_ataque","path":"sprites/Spr_ataque/Spr_ataque.yy",},"order":3,},
+    {"id":{"name":"Obj_trocaCor","path":"objects/Obj_trocaCor/Obj_trocaCor.yy",},"order":4,},
     {"id":{"name":"spr_tran_moving","path":"sprites/spr_tran_moving/spr_tran_moving.yy",},"order":2,},
     {"id":{"name":"Spr_prota","path":"sprites/Spr_prota/Spr_prota.yy",},"order":0,},
     {"id":{"name":"spr_moving","path":"sprites/spr_moving/spr_moving.yy",},"order":1,},
