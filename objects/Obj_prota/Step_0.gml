@@ -7,29 +7,7 @@ key_attack = keyboard_check_pressed(ord("J"))
 
 #endregion
 
-#region ATAQUE
-// soma o tempo desde o ultimo frame ao tempo geral
-cooldown += delta_time
 
-// DIREÇÃO DO ATAQUE
-var flipped = direction
-// LOCAL DE APARECIMENTO DO ATAQUE
-var ataque_x = x+lengthdir_x(16,image_angle)
-var ataque_y = y-32
-
-// SE APERTAR J E O TEMPO DESDE
-// O ULTIMO ATAQUE FOR MAIOR QUE 1
-if key_attack && cooldown >= 1
-{
-	cooldown = 0
-	with (instance_create_layer(ataque_x, ataque_y,"Ataques",Obj_playerAtaque))
-	{
-		image_xscale = flipped;
-		mudarCor(global.atk,global.vel,global.def)	
-	}
-}
-
-#endregion
 
 #region MOVIMENTAÇÃO
 var move = key_right - key_left
@@ -66,7 +44,34 @@ if place_meeting(x,y+1,Obj_floor) and key_jump{
 
 #endregion
 
+#region ATAQUE
+// soma o tempo desde o ultimo frame ao tempo geral
+global.cooldown += delta_time
 
+// LOCAL DE APARECIMENTO DO ATAQUE
+var ataque_x = x+lengthdir_x(8,image_angle)
+var ataque_y = y-32
+
+// SE APERTAR J E O TEMPO DESDE
+// O ULTIMO ATAQUE FOR MAIOR QUE 1
+if key_attack && global.cooldown >= 1
+{
+	global.cooldown = 0
+	with (instance_create_layer(ataque_x, ataque_y,"Ataques",Obj_playerAtaque))
+	{
+		// VIRA O ATAQUE
+		if other.image_xscale < 0
+		{
+			image_xscale *= -1	
+		}
+		image_blend = 0 + ((c_red/5) * global.atk) + ((c_lime/5)*global.vel) + ((c_blue/5)*global.def)
+		image_xscale *= 2
+		image_yscale *= 2
+
+	}
+}
+
+#endregion
 #region //CONTROLE DE SPRITES
 
 
