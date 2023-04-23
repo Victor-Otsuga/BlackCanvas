@@ -28,6 +28,6 @@ if keyboard_check_pressed(ord("B"))
 // parcelas de cor de acordo com os estatus do player, se o atk é
 // 2, será adicionado na cor 2 quintos de RED
 function mudarCor(){
-	image_blend = corOriginal + ((c_red/5) * atk) +
+	image_blend = 0 + ((c_red/5) * atk) +
 	((c_lime/5)*vel) + ((c_blue/5)*def)
 }
