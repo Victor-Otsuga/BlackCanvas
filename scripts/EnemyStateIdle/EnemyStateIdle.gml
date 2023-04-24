@@ -4,7 +4,7 @@ function EnemyStateIdle(){
 
 #region MOVIMENTAÇÃO
 	
-	function patrulha()
+	function patrulha() //FUNÇAO PRO MOB SEGUIR O PLAUER
 	{
 		if(hspd != 0) image_xscale = sign(hspd);
 
@@ -30,23 +30,20 @@ function EnemyStateIdle(){
 	
 	// PERSEGUIÇÃO
 	// dir_x define se o player está na direita ou esquerda do inimigo
-	var dir_x = sign(player.x - x)
 	var distancia_do_player = player.x - x;
 	
 	// Se a distancia do player for negativa, vira positiva
 	if distancia_do_player < 0 distancia_do_player *= -1
 	
+	//SE A DISTANCIA DO PLAYER FOR MENOR QUE 240 O MOB ENTRA EM CHASE
 	if distancia_do_player < 240 
-	{
-		
-		image_xscale = dir_x
-		x = x + dir_x * spd
+	{	
+		state = EnemyState.CHASE	
 	}
-	else
-	{
-		// SE NÃO ESTIVER EM MODO PERSEGUIÇÃO, VOLTA AO MODO PATRULHA
+	else{
 		patrulha()
 	}
+
 
 	#endregion
 	

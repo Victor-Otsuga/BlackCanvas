@@ -1,5 +1,3 @@
-
-
 function PlayerStateFree(){
 	
 script_execute(Get_input)
@@ -51,10 +49,14 @@ var ataque_y = y-32
 // O ULTIMO ATAQUE FOR MAIOR QUE 2 (Pelo menos é o que tentei fazer)
 if key_attack && cooldown >= 2
 {
+	//caso o ataque seja chamado ele entra no estado de ataques
+	state = PlayerState.ATTACK
 	global.cooldown = 0
-	sprite_index=spr_player_ataque
 	with (instance_create_layer(ataque_x, ataque_y,"Ataques",Obj_playerAtaque))
 	{
+		
+		
+		
 		
 		// VIRA O ATAQUE
 		if other.image_xscale < 0
@@ -67,6 +69,8 @@ if key_attack && cooldown >= 2
 		image_yscale *= 2
 
 	}
+	
+	
 }
 
 #endregion
@@ -75,15 +79,16 @@ if key_attack && cooldown >= 2
 
 
 
+
 if(!place_meeting(x,y+1,Obj_floor)) //se o player não estiver em contato com chão
 {
-	sprite_inde = spr_idle; // aki vai o sprite de inicio pulo
+	sprite_index = spr_idle; // aki vai o sprite de inicio pulo
 	if(sign(vspd) > 0.5) sprite_index = spr_idle; // aki vai o sprite durante pulo/queda
-	else sprite_inde=spr_idle; //caso contrario player fica normal
+	else sprite_index=spr_idle; //caso contrario player fica normal
 }
 else
 {
-	if(hspd != 0){ //Se a velocidade é diferente de 0(esta movendo)
+	if(hspd != 0 and state != PlayerState.ATTACK){ //Se a velocidade é diferente de 0(esta movendo)
 
 		sprite_index = spr_moving;
 	}
@@ -94,7 +99,7 @@ if hspd = 0{
 		sprite_index=spr_idle
 	}
 }
-if hspd != 0{
+if hspd != 0 and state != PlayerState.ATTACK{
 	if place_meeting(x,y+1,Obj_floor){
 		sprite_index = spr_moving;
 	}
