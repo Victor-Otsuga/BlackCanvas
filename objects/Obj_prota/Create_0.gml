@@ -13,7 +13,7 @@ state = PlayerState.FREE;
  enum PlayerState
 { 
 FREE,
-FREEZE
+ATTACK
 }
 
 // STATUS DO JOGADOR
