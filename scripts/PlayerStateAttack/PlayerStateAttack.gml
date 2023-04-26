@@ -38,13 +38,14 @@ if place_meeting(x,y+1,Obj_floor) and key_jump{
 
 #endregion
 
-
+image_speed = (global.vel/10) + 1
 //se o ataque foi chamado em movimento
 if(hspd != 0){
 
 //verificando se chegou na sexta imagem do sprite
-if (image_index > 5.8)
+if (image_index > 4.8)
 {
+	image_speed = 1;
 	state = PlayerState.FREE
 	sprite_index = spr_moving
 }else{ //caso não tenha chego o sprite vai ser iniciado ou continuar rodando caso ja tenha sido
@@ -55,12 +56,14 @@ if (image_index > 5.8)
 }else{
 
 //verificando se chegou na sexta imagem do sprite
-if (image_index > 5.8)
+if (image_index > 4.8)
 {
+	image_speed = 1;
 	state = PlayerState.FREE
 	sprite_index = spr_idle
 }else{ //caso não tenha chego o sprite vai ser iniciado ou continuar rodando caso ja tenha sido
 	sprite_index = spr_player_ataque
+
 }
 }	
 	

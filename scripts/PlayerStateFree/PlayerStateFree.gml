@@ -136,5 +136,12 @@ if keyboard_check_pressed(ord("B"))
 
 #endregion
 
+#region DASHING
+
+if keyboard_check_pressed(ord("E"))
+{
+	state = PlayerState.DASH;	
+}
+#endregion
 
 }
