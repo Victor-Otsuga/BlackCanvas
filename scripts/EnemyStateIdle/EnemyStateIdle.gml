@@ -30,7 +30,7 @@ function EnemyStateIdle(){
 	
 	// PERSEGUIÇÃO
 	// dir_x define se o player está na direita ou esquerda do inimigo
-	var distancia_do_player = player.x - x;
+
 	
 	// Se a distancia do player for negativa, vira positiva
 	if distancia_do_player < 0 distancia_do_player *= -1

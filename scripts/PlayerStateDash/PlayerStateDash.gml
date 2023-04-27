@@ -8,6 +8,7 @@ function PlayerStateDash(){
 	
 	sprite_index = spr_dashing;
 	
+	vspd = vspd + grv-0.1;
 
 	if(hspd != 0) image_xscale = sign(hspd);
 
@@ -26,11 +27,11 @@ function PlayerStateDash(){
 	if place_meeting(x,y+ vspd,Obj_floor){
 	while(!place_meeting(x,y+sign(vspd),Obj_floor))
 	{
-	//y = y + sign(vspd)
+	y = y + sign(vspd)
 	}
 	vspd = 0;
 	}
-	//y=y+vspd;
+	y=y+vspd;
 
 		
 	
@@ -54,4 +55,12 @@ function PlayerStateDash(){
 
 		
 	}
+	
+#region INTERAÇÃO COM INIMIGOS (COMO TOMAR DANO)
+
+function takeDamage(dano){
+	//Só existe para não dar erro	
+}
+
+#endregion
 }

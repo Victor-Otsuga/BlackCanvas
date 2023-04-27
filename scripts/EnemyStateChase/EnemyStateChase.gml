@@ -4,8 +4,6 @@
 function EnemyStateChase(){
 if(hspd != 0){image_xscale = sign(hspd); // troca o lado do sprite
 	}
-
-var distancia_do_player = player.x - x; //PEGANDO A DISTANCIA ENTRE ELE O PLAYER
 var dir_x = sign(player.x - x) // dir_x define se o player está na direita ou esquerda do inimigo
 	
 image_xscale = dir_x

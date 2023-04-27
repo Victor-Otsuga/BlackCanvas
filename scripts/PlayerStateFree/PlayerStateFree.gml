@@ -82,9 +82,10 @@ if key_attack && cooldown >= 2
 
 if(!place_meeting(x,y+1,Obj_floor)) //se o player não estiver em contato com chão
 {
-	sprite_index = spr_idle; // aki vai o sprite de inicio pulo
-	if(sign(vspd) > 0.5) sprite_index = spr_idle; // aki vai o sprite durante pulo/queda
-	else sprite_index=spr_idle; //caso contrario player fica normal
+	
+	sprite_index = spr_jump; // aki vai o sprite de inicio pulo
+	if(sign(vspd) > 0.5) sprite_index = spr_fall; // aki vai o sprite durante pulo/queda
+	
 }
 else
 {
@@ -144,4 +145,11 @@ if keyboard_check_pressed(ord("E"))
 }
 #endregion
 
+#region INTERAÇÃO COM INIMIGOS (COMO TOMAR DANO)
+
+function takeDamage(dano){
+	vida -= (dano - global.def)
+}
+
+#endregion
 }

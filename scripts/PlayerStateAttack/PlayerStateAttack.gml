@@ -67,7 +67,13 @@ if (image_index > 4.8)
 }
 }	
 	
+#region INTERAÇÃO COM INIMIGOS (COMO TOMAR DANO)
 
+function takeDamage(dano){
+	vida -= (dano - global.def)	
+}
+
+#endregion
 	
 
 }
